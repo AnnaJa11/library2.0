@@ -59,21 +59,21 @@ def add_availability(conn, aval):
 
 
 if __name__ == "__main__":
-   author = ("Samuel", "Becket ","drama")
+   author = ("Lewis", "Carroll ","fiction")
    
    conn = create_connection("database.db")
    a_id = add_author(conn, author)
 
    book = (
        a_id,
-       "Waiting for Godot",
-       "The story revolves around two seemingly homeless men simply waiting for someone—or something—named Godot.",
-       "1949-05-03 00:00:00"
+       "Alice's Adventures in Wonderland ",
+       "A story about Alice who falls down a rabbit hole and lands into a fantasy world.",
+       "1865-08-11 00:00:00"
    )
 
    book_id = add_book(conn, book)
    
-   aval = (book_id, "available")
+   aval = (book_id, "unavailable")
    aval_id = add_availability(conn, aval)
 
    print(a_id, book_id, aval_id)
